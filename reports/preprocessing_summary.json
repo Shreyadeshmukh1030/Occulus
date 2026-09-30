@@ -1,0 +1,82 @@
+{
+  "project": "RetinaAware / VisionCare",
+  "timestamp": "2026-09-20T11:04:55.449762",
+  "random_seed": 42,
+  "target_classes": [
+    "N",
+    "D",
+    "G",
+    "C",
+    "A",
+    "H"
+  ],
+  "original_dataset": {
+    "total_images": 6392,
+    "corrupted_images": 0,
+    "exact_duplicate_hashes": 0
+  },
+  "after_label_filtering": {
+    "images_retained": 5452,
+    "excluded_m_and_o": 940
+  },
+  "after_quality_filtering": {
+    "images_retained": 5451,
+    "images_flagged": 1
+  },
+  "final_curated_subset": {
+    "total_unique_images": 1328,
+    "total_patients": 1328,
+    "normal_images": 300,
+    "single_disease_images": 1028,
+    "multi_disease_images": 0
+  },
+  "splits": {
+    "train": {
+      "images": 929,
+      "patients": 929,
+      "percentage": 70.0,
+      "labels": {
+        "N": 210,
+        "D": 210,
+        "G": 140,
+        "C": 140,
+        "A": 140,
+        "H": 89
+      }
+    },
+    "validation": {
+      "images": 199,
+      "patients": 199,
+      "percentage": 15.0,
+      "labels": {
+        "N": 45,
+        "D": 45,
+        "G": 30,
+        "C": 30,
+        "A": 30,
+        "H": 19
+      }
+    },
+    "test": {
+      "images": 200,
+      "patients": 200,
+      "percentage": 15.1,
+      "labels": {
+        "N": 45,
+        "D": 45,
+        "G": 30,
+        "C": 30,
+        "A": 30,
+        "H": 20
+      }
+    }
+  },
+  "label_combinations": {
+    "N": 300,
+    "D": 300,
+    "G": 200,
+    "C": 200,
+    "A": 200,
+    "H": 128
+  }
+}

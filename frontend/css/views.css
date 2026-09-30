@@ -1,0 +1,785 @@
+/* Occulus — View-Specific Layouts
+   Styles for all 15 Core Clinical Screens
+   Matches the Reference Design Exactly
+*/
+
+/* -------------------------------------------------------------
+   VIEW 1: LANDING PAGE (Exact Match to Reference Image)
+------------------------------------------------------------- */
+.landing-view {
+  background: #FFFFFF;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #334155;
+}
+
+/* Navbar */
+.landing-nav {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.landing-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.brand-eye-logo {
+  width: 32px;
+  height: 32px;
+  color: #0284C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-brand-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0A2540;
+  letter-spacing: -0.02em;
+}
+.landing-brand-text span {
+  color: #0284C7;
+}
+
+.landing-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.landing-nav-links a {
+  color: #475569;
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.landing-nav-links a:hover,
+.landing-nav-links a.active {
+  color: #0077EE;
+  font-weight: 600;
+}
+
+.landing-nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: #0077EE;
+  border-radius: 999px;
+}
+
+.btn-pill-primary {
+  background: #0077EE;
+  color: #FFFFFF;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 14px rgba(0, 119, 238, 0.25);
+  transition: all 0.2s ease;
+  border: none;
+}
+.btn-pill-primary:hover {
+  background: #0060C4;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 119, 238, 0.35);
+}
+
+.btn-pill-outline {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+}
+.btn-pill-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+/* Hero Section (Dark Blue with Eye Scanner Backdrop) */
+.occulus-hero {
+  position: relative;
+  background: #03142A;
+  background: linear-gradient(90deg, #03142A 0%, #062142 45%, rgba(6, 33, 66, 0.6) 70%, transparent 100%),
+              url('../assets/hero_eye.jpg') no-repeat right center / cover;
+  padding: 5.5rem 4rem 6.5rem;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.occulus-hero-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+}
+
+.hero-badge-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #38BDF8;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  display: inline-block;
+}
+
+.occulus-hero-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin-bottom: 1.35rem;
+}
+.occulus-hero-title span {
+  color: #00D2FF;
+}
+
+.occulus-hero-desc {
+  font-size: 1.08rem;
+  color: #CBD5E1;
+  line-height: 1.65;
+  max-width: 520px;
+  margin-bottom: 2.25rem;
+}
+
+.occulus-hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* 4 Feature Cards (Directly Below Hero) */
+.feature-cards-row {
+  max-width: 1300px;
+  margin: -2.5rem auto 4.5rem;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.occulus-feature-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 1.85rem 1.5rem;
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.occulus-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -4px rgba(15, 23, 42, 0.1);
+  border-color: #BAE6FD;
+}
+
+.feature-icon-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #E0F2FE;
+  color: #0284C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.occulus-feature-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.5rem;
+}
+
+.occulus-feature-desc {
+  font-size: 0.85rem;
+  color: #64748B;
+  line-height: 1.55;
+}
+
+/* Section Common Styles */
+.occulus-section {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 4.5rem;
+}
+
+.section-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0284C7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.section-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0A2540;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtext {
+  font-size: 0.95rem;
+  color: #64748B;
+  line-height: 1.6;
+}
+
+/* HOW IT WORKS Section */
+.how-it-works-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.6fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.btn-outline-blue {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.4rem;
+  border: 1.5px solid #0077EE;
+  color: #0077EE;
+  background: #FFFFFF;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: 1.5rem;
+}
+.btn-outline-blue:hover {
+  background: #EFF6FF;
+  border-color: #0060C4;
+  color: #0060C4;
+}
+
+.steps-flow-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.flow-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.flow-step-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #E0F2FE;
+  color: #0284C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+}
+
+.flow-step-arrow {
+  font-size: 1.25rem;
+  color: #94A3B8;
+  margin-top: 1rem;
+}
+
+.flow-step-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0A2540;
+  margin-bottom: 0.25rem;
+}
+
+.flow-step-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.35rem;
+}
+
+.flow-step-desc {
+  font-size: 0.72rem;
+  color: #64748B;
+  line-height: 1.45;
+}
+
+/* CONDITIONS COVERED Section */
+.conditions-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.condition-thumb-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: left;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+}
+.condition-thumb-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+  border-color: #BAE6FD;
+}
+
+.condition-thumb-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.15rem;
+  display: block;
+  border: 3px solid #F1F5F9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.condition-thumb-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.35rem;
+}
+
+.condition-thumb-desc {
+  font-size: 0.75rem;
+  color: #64748B;
+  line-height: 1.45;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.condition-thumb-arrow {
+  color: #0077EE;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Bottom CTA Banner (Dark Blue with Holographic Eye) */
+.occulus-cta-banner {
+  background: #03142A;
+  background: linear-gradient(90deg, #03142A 0%, #06203F 45%, rgba(6, 32, 63, 0.7) 65%, transparent 100%),
+              url('../assets/footer_eye.jpg') no-repeat right center / cover;
+  padding: 4.5rem 4rem;
+  color: #FFFFFF;
+}
+
+.occulus-cta-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.cta-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38BDF8;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.cta-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.35rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+.cta-desc {
+  font-size: 0.95rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+
+/* -------------------------------------------------------------
+   VIEW 2: LOGIN
+------------------------------------------------------------- */
+.login-view {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, #EFF6FF 0%, #F8FAFC 100%);
+  padding: 2rem;
+}
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-xl);
+  padding: 2.75rem 2.25rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.demo-account-box {
+  background: var(--brand-light-blue);
+  border: 1px dashed var(--brand-border-blue);
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+
+/* -------------------------------------------------------------
+   VIEW 4: NEW SCREENING
+------------------------------------------------------------- */
+.screening-workflow-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 2rem;
+}
+
+.fundus-dropzone {
+  border: 2px dashed var(--surface-border-strong);
+  border-radius: var(--radius-xl);
+  background: #FAFCFF;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+.fundus-dropzone:hover, .fundus-dropzone.dragover {
+  border-color: var(--brand-primary);
+  background: var(--brand-light-blue);
+}
+
+.sample-presets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.sample-preset-btn {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.sample-preset-btn:hover {
+  border-color: var(--brand-sky);
+  background: var(--brand-light-blue);
+}
+.sample-preset-thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+
+/* -------------------------------------------------------------
+   VIEW 5: PROCESSING SCREEN
+------------------------------------------------------------- */
+.processing-container {
+  max-width: 620px;
+  margin: 3rem auto;
+  text-align: center;
+}
+.processing-scanner-box {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 8px rgba(14, 165, 233, 0.15);
+}
+.processing-scan-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #38BDF8, #2563EB, transparent);
+  box-shadow: 0 0 15px #38BDF8;
+  animation: scanLoop 2.2s infinite ease-in-out;
+}
+@keyframes scanLoop {
+  0% { top: 0; }
+  50% { top: 97%; }
+  100% { top: 0; }
+}
+
+.pipeline-stage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  text-align: left;
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+.pipeline-stage-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.pipeline-stage-item.completed {
+  color: var(--status-normal);
+}
+.pipeline-stage-item.active {
+  color: var(--brand-royal);
+  font-weight: 700;
+}
+
+
+/* -------------------------------------------------------------
+   VIEW 6: SCREENING RESULT (CENTERPIECE)
+------------------------------------------------------------- */
+.result-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.result-layout-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1.75rem;
+}
+
+.result-viewer-card {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.canvas-viewport {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #000000;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.canvas-viewport canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gradcam-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F8FAFC;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+}
+
+.segmented-toggle {
+  display: inline-flex;
+  background: #E2E8F0;
+  padding: 3px;
+  border-radius: var(--radius-md);
+}
+.segmented-btn {
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+.segmented-btn.active {
+  background: #FFFFFF;
+  color: var(--brand-royal);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+/* -------------------------------------------------------------
+   VIEW 12: EYE EXPLORER (Educational & Visual)
+------------------------------------------------------------- */
+.eye-diagram-container {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, #0A2540 0%, #061527 100%);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hotspot {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.4);
+  border: 2px solid #38BDF8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  animation: hotspotPulse 2s infinite ease-in-out;
+}
+.hotspot:hover {
+  transform: scale(1.2);
+  background: #38BDF8;
+}
+@keyframes hotspotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.6); }
+  50% { box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
+}
+
+.condition-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+  .feature-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .conditions-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .how-it-works-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app-sidebar {
+    transform: translateX(-100%);
+  }
+  .app-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+  .app-main {
+    margin-left: 0;
+  }
+  .occulus-hero-inner, .screening-workflow-grid, .result-layout-grid, .occulus-cta-inner {
+    grid-template-columns: 1fr;
+  }
+  .steps-flow-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-nav {
+    padding: 0 1.5rem;
+  }
+  .landing-nav-links {
+    display: none;
+  }
+  .occulus-hero {
+    padding: 4rem 1.5rem 5rem;
+  }
+  .occulus-hero-title {
+    font-size: 2.4rem;
+  }
+  .feature-cards-row {
+    grid-template-columns: 1fr;
+    margin-top: 1.5rem;
+  }
+  .conditions-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
